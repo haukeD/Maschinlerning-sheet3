@@ -101,6 +101,86 @@ Exercise sheet 3}
 
 \section{Exercise 1 (Linear support vector machines – “toy” example):}
 
+\subsection{a)}
+
+Da $\vec{w}^T \cdot \vec{x}^{(\text{test1})} = b^*$
+
+%\subsection{b)}
+
+%Die umkreisten Datenpunkte $\vec{x}^{(\mu)}$ %$ \vec{x)^{(\mu)} $%  ,y^{(\mu)} )$, %mit $y^{\mu} \cdot \left( \vec{w}^T  \cdot \vec{x)^{\mu} + b\right) = 1$, 
+werden \textit{Support Vektoren} genannt. 
+\section{Exercise 3 (Nonlinear SVM – XOR-problem to illustrate the kernel trick)}
+Sei 
+$\Phi : \R^2 \rightarrow \R^6, \begin{pmatrix} x_1 \\ x_2 \end{pmatrix} \mapsto 
+\begin{pmatrix} x_1^2 \\ x_2^2 \\ \sqrt{2} x_1 \\ \sqrt{2} x_2 \\ \sqrt{2} x_1 x_2 \\ 1 \end{pmatrix}$
+
+\subsection{a)}
+$$
+\Phi(x)^T \cdot \Phi(y) = 
+\begin{pmatrix} 
+x_1^2 & x_2^2 & \sqrt{2} x_1 & \sqrt{2} x_2 & \sqrt{2} x_1 x_2 & 1 
+\end{pmatrix} 
+\cdot \begin{pmatrix} y_1^2 \\ y_2^2 \\ \sqrt{2} y_1 \\ \sqrt{2} y_2 \\ \sqrt{2} y_1 y_2 \\ 1 \end{pmatrix}
+= x_1^2 \cdot y_1^2 + x_2^2 \cdot y_2^2 + 2 x_1 y_1 + 2 x_2 y_2 + 2 x_1 x_2 y_1 y_2 + 1
+$$
+
+\subsection{b)}
+
+$$
+\begin{pmatrix}
+x_1 & x_2
+\end{pmatrix}
+\cdot \begin{pmatrix}
+y_1 \\ y_2
+\end{pmatrix}
+= x_1 y_1 + x_2 y_2
+$$
+
+\subsection{c)}
+\begin{tabular}{|c|c|c|c|}
+%\caption{XOR}
+\hline
+$x_1$ & $x_2$ & xor($x_1$, $x_2$) & $\Phi(x_1,x_2)$ \\
+\hline \hline
+-1 & -1 & -1 & $
+\begin{pmatrix}
+ 1 &
+ 1 &
+ -\sqrt{2} &
+ -\sqrt{2} &
+ \sqrt{2} &
+ 1 
+\end{pmatrix}^T$ \\
+\hline
+-1 & 1 & 1 & $\begin{pmatrix}
+ 1 &
+ 1 &
+ -\sqrt{2} &
+ \sqrt{2} &
+ -\sqrt{2} &
+ 1 
+\end{pmatrix}^T$ \\
+\hline
+1 & -1 & 1 & $\begin{pmatrix}
+ 1 &
+ 1 &
+ \sqrt{2} &
+ -\sqrt{2} &
+ -\sqrt{2} &
+ 1 
+\end{pmatrix}^T$ \\
+\hline
+1 & 1 & -1 & $\begin{pmatrix}
+ 1 &
+ 1 &
+ \sqrt{2} &
+ \sqrt{2} &
+ \sqrt{2} &
+ 1 
+\end{pmatrix}^T$ 
+\label{tab:xor}
+\end{tabular}
+
 
 
 
