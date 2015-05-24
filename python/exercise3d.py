@@ -28,7 +28,7 @@ xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
 # http://scikit-learn.sourceforge.net/stable/modules/svm.html (section 3.2.7)
 # polynomial ("poly"): (gamma*<x,y>+r)**d corresponding to (gamma*<x,y>+coef0)**degree
 # RBF kernel ("rbf"): exp(-gamma|x-y|**2), i.e. gamma corresponds to gamma = 1/(2*sigma*sigma)
-clf = svm.SVC(kernel='???', degree=???, gamma=???, coef0=???, C=1.0)   # FIX!!!  
+clf = svm.SVC(kernel='rbf', degree=3, gamma=0.0, coef0=0.0, C=1.0)   # FIX!!!
 clf.fit(X, Y)
 
 # plot the decision boundary. For that, we will assign a color to each
