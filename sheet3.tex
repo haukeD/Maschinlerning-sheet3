@@ -30,6 +30,10 @@
 %absatz
 \usepackage{setspace} 
 
+%breaking math formulars automaticly
+%http://tex.stackexchange.com/questions/3782/how-can-i-split-an-equation-over-two-lines
+\usepackage{breqn}
+
 %Durchstreichungen
 %\cancel
 %http://de.wikibooks.org/wiki/LaTeX-Kompendium:_F%C3%BCr_Mathematiker#Durchstreichungen
@@ -126,15 +130,18 @@ $$
 
 \subsection{b)}
 
-$$
-\begin{pmatrix}
-x_1 & x_2
-\end{pmatrix}
-\cdot \begin{pmatrix}
-y_1 \\ y_2
-\end{pmatrix}
-= x_1 y_1 + x_2 y_2
-$$
+Sei die Kernelfunktion $k$ gegeben mit:
+\begin{dmath}
+k(\vec{x}^T \cdot \vec{y}) = (\vec{x}^T \cdot \vec{y})
+= (\vec{x}^T \cdot \vec{y})^2 + 2(\vec{x}^T \cdot \vec{y}) + 1
+= x_1^2 \cdot y_1^2 + x_2^2  \cdot y_2^2 + 
+\sqrt{2} x_1  \cdot  \sqrt{2} y_1 + \sqrt{2} x_2  \cdot  \sqrt{2} y_2 +
+\sqrt{2} x_1 x_2  \cdot  \sqrt{2} y_1 y_2 + 1 \cdot 1 = \begin{pmatrix} 
+x_1^2 & x_2^2 & \sqrt{2} x_1 & \sqrt{2} x_2 & \sqrt{2} x_1 x_2 & 1 
+\end{pmatrix} 
+\cdot \begin{pmatrix} y_1^2 \\ y_2^2 \\ \sqrt{2} y_1 \\ \sqrt{2} y_2 \\ \sqrt{2} y_1 y_2 \\ 1 \end{pmatrix}
+= \Phi(x)^T \cdot \Phi(y)
+\end{dmath}
 
 \subsection{c)}
 \begin{tabular}{|c|c|c|c|}
@@ -177,10 +184,17 @@ $x_1$ & $x_2$ & xor($x_1$, $x_2$) & $\Phi(x_1,x_2)$ \\
  \sqrt{2} &
  \sqrt{2} &
  1 
-\end{pmatrix}^T$ 
+\end{pmatrix}^T$ \\
+\hline
 \label{tab:xor}
 \end{tabular}
 
+Da für die 4 Möglichen Eingaben $\{-1,1\}^2$ die Ausgabe für $\Phi$ sich nur in 3 Dimensionen unterscheiden, können wir diese als 3D-Punkte darstellen. 
+
+%\begin{figure}
+\includegraphics[scale=1]{3c}
+%\input{3c.pdf_tex}
+%\end{figure}
 
 
 

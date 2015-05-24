@@ -1,0 +1,1 @@
+e:\Programme\Inkscape\inkscape --without-gui --file=3c.svg --export-pdf=3c.pdf --export-latex
