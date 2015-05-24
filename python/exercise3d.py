@@ -12,7 +12,7 @@ import pylab as pl
 from sklearn import svm
 
 X = np.array([ [-1,-1], [-1,1], [1,-1], [1,1] ])
-Y = np.array([???,???,???,???])  # FIX!!! 
+Y = np.array([-1,1,1,-1])  # FIX!!!
 
 
 # create a mesh to plot in
